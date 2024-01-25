@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend2-deploy        # Nom unique pour votre nouveau déploiement Spring Boot
+  labels:
+    app: backend-app2          # Étiquette unique pour votre nouveau déploiement Spring Boot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-app2        # Étiquette unique pour votre nouveau déploiement Spring Boot
+  template:
+    metadata:
+      labels:
+        app: backend-app2      # Étiquette unique pour votre nouveau déploiement Spring Boot
+    spec:
+      containers:
+        - name: backend-container
+          image: karma12/crud2-spring-boot  # Nouvelle image Docker pour votre application Spring Boot
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8030
+          env:
+            - name: DB_HOST
+              value: mysqldb2          # Nom du service MySQL nouvellement créé
+            - name: DB_NAME
+              value: devops          # Nom unique pour votre nouvelle base de données MySQL
+            - name: DB_USERNAME
+              value: root
+            - name: DB_PASSWORD
+              value: root

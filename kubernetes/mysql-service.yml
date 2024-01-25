@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysqldb2              # Nom unique pour votre nouveau service MySQL
+  labels:
+    name: mysql-service2      # Étiquette unique pour votre nouveau service MySQL
+spec:
+  ports:
+    - port: 3307              # Changer le port du service MySQL (utilisez un port non utilisé)
+      targetPort: 3306
+  selector:
+    app: mysqldb2             # Étiquette unique pour votre nouveau déploiement MySQL
