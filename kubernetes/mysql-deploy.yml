@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql2-deploy  # Nom unique pour votre nouveau déploiement MySQL
+  name: mysql3-deploy  # Nom unique pour votre nouveau déploiement MySQL
   labels:
-    app: mysqldb2      # Étiquette unique pour votre nouveau déploiement MySQL
+    app: mysqldb3     # Étiquette unique pour votre nouveau déploiement MySQL
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mysqldb2     # Étiquette unique pour votre nouveau déploiement MySQL
+      app: mysqldb3     # Étiquette unique pour votre nouveau déploiement MySQL
   template:
     metadata:
       labels:
-        app: mysqldb2   # Étiquette unique pour votre nouveau déploiement MySQL
+        app: mysqldb3  # Étiquette unique pour votre nouveau déploiement MySQL
     spec:
       containers:
         - name: mysqldb
