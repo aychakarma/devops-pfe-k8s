@@ -26,6 +26,6 @@ spec:
             - name: DB_NAME
               value: devops          # Nom unique pour votre nouvelle base de données MySQL
             - name: DB_USERNAME
-              value: root
+              value: aycha
             - name: DB_PASSWORD
               value: root
