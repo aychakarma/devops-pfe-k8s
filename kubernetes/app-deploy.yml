@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend4-deploy        # Nom unique pour votre nouveau déploiement Spring Boot
+  name: dev-deploy
   labels:
-    app: backend-app4         # Étiquette unique pour votre nouveau déploiement Spring Boot
+    app: backend-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend-app4   # Étiquette unique pour votre nouveau déploiement Spring Boot
+      app: backend-app
   template:
     metadata:
       labels:
-        app: backend-app4     # Étiquette unique pour votre nouveau déploiement Spring Boot
+        app: backend-app
     spec:
       containers:
         - name: backend-container
-          image: karma12/crud4-spring-boot  # Nouvelle image Docker pour votre application Spring Boot
+          image: karma12/devs-spring-boot:test
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8050
           env:
             - name: DB_HOST
-              value: mysqldb4       # Nom du service MySQL nouvellement créé
+              value: mysqldb
             - name: DB_NAME
-              value: devops          # Nom unique pour votre nouvelle base de données MySQL
+              value: crud-db
             - name: DB_USERNAME
-              value: aycha
-            - name: DB_PASSWORD
               value: root
+            - name: DB_PASSWORD
+              value: aycha
