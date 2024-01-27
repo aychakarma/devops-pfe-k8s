@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend-container
-          image: karma12/devs-spring-boot:test
+          image: karma12/deevs-spring-boot:test
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8050
